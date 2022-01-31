@@ -517,7 +517,7 @@ class Signature(object):
                         raise ValueError(msg)
                     params[name] = param
             else:
-                params = OrderedDict(((param.name, param) for param in parameters))
+                params = OrderedDict((param.name, param) for param in parameters)
 
         self._parameters = params
         self._return_annotation = return_annotation

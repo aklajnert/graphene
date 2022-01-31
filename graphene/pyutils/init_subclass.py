@@ -18,6 +18,5 @@ if not is_init_subclass_available:
             if hasattr(super_class, "__init_subclass__"):
                 super_class.__init_subclass__.__func__(cls, **kwargs)
 
-
 else:
     InitSubclassMeta = type  # type: ignore

@@ -23,8 +23,8 @@ def test_enum_construction():
     assert RGB._meta.description == "Description"
 
     values = RGB._meta.enum.__members__.values()
-    assert sorted([v.name for v in values]) == ["BLUE", "GREEN", "RED"]
-    assert sorted([v.description for v in values]) == [
+    assert sorted(v.name for v in values) == ["BLUE", "GREEN", "RED"]
+    assert sorted(v.description for v in values) == [
         "Description BLUE",
         "Description GREEN",
         "Description RED",
@@ -49,7 +49,7 @@ def test_enum_instance_construction():
     RGB = Enum("RGB", "RED,GREEN,BLUE")
 
     values = RGB._meta.enum.__members__.values()
-    assert sorted([v.name for v in values]) == ["BLUE", "GREEN", "RED"]
+    assert sorted(v.name for v in values) == ["BLUE", "GREEN", "RED"]
 
 
 def test_enum_from_builtin_enum():
